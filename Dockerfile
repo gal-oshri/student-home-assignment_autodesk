@@ -1,7 +1,8 @@
-# syntax=docker/dockerfile:1
- FROM node:12-alpine
- RUN apk add --no-cache python g++ make
+ # syntax=docker/dockerfile:1
+ FROM node:12.18.1
+ ENV NODE_ENV=production
  WORKDIR /app
+ COPY ["package.json",  "./"]
+ RUN npm install
  COPY . .
- RUN yarn install --production
- CMD ["node", "src/index.js"]
+ CMD ["node", "home_assignment.js"]
