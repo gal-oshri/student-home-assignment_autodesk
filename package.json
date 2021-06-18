@@ -1,0 +1,22 @@
+{
+    "name": "student-home-assignment_autodesk",
+    "version": "1.0.0",
+    "description": "A service with 2 APIs: GET tweets, GET health",
+    "main": "home_assignment.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gal-oshri/student-home-assignment_autodesk.git"
+      },
+    "private": true,
+    "dependencies": {
+        "express": "^1.0.0",
+        "twitter": "^1.0.0",
+        "url": "^1.0.0",
+        "os": "^1.0.0",
+        "os-utils": "^1.0.0"
+      },
+    "engines": {
+        "node": ">= 6.0.0",
+        "npm": ">= 3.0.0"
+      }
+}
