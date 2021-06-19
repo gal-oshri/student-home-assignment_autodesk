@@ -1,25 +1,24 @@
 {
-    "name": "student-home-assignment_autodesk",
-    "version": "1.0.0",
-    "description": "A service with 2 APIs: GET tweets, GET health",
-    "main": "home_assignment.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/gal-oshri/student-home-assignment_autodesk.git"
-      },
-    "private": true,
-    "dependencies": {
-        "express": "4.17.1",
-        "twitter": "1.7.1",
-        "url": "0.11.0",
-        "os": "0.1.1",
-        "os-utils": "0.0.14"
-      },
-    "engines": {
-        "node": ">= 6.0.0",
-        "npm": ">= 3.0.0"
-      }
-    "scripts": {
-    "start": "node student-home-assignment_autodesk.js"
-     }
+  "name": "student-home-assignment_autodesk",
+  "version": "1.0.0",
+  "description": "A service with 2 APIs: GET tweets, GET health",
+  "engines": {
+    "node": "14.x"
+  },
+  "main": "home_assignment.js",
+  "scripts": {
+    "start": "node home_assignment.js"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+      "twitter": "1.7.1",
+      "url": "0.11.0",
+      "os": "0.1.1",
+      "os-utils": "0.0.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gal-oshri/student-home-assignment_autodesk.git"
+  }
 }
+
