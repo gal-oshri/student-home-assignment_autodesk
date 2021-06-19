@@ -5,9 +5,6 @@ var url = require('url');
 var os = require('os');
 var os_util 	= require('os-utils');
 
-
-
-
 params = {
   consumer_key: 'NzC26USe8NEXCWYQ4XFhk7SK3',
   consumer_secret: 'aR1igDjAugImaq3Ewh8zenAO5PijlFwCHU9JSbTNgZEOAtJ08D',
@@ -16,7 +13,11 @@ params = {
 var client = new Twitter(params);
 
 
-app.listen(3000);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
 app.route('/tweets').get(function(req, res) {
   var q = url.parse(req.url, true).query;
