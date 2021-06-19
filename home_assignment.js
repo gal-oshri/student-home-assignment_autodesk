@@ -4,6 +4,7 @@ var Twitter = require('twitter');
 var url = require('url');
 var os = require('os');
 var os_util 	= require('os-utils');
+const { text } = require("express");
 
 params = {
   consumer_key: 'NzC26USe8NEXCWYQ4XFhk7SK3',
@@ -20,10 +21,16 @@ if (port == null || port == "") {
 app.listen(port);
 
 app.route('/tweets').get(function(req, res) {
+  var tweetsArray = [];
   var q = url.parse(req.url, true).query;
   client.get('search/tweets', {q: q.query, result_type: 'recent', count: 10}, function(error, tweets, response) {
-  var tweetJson = JSON.stringify(tweets);
-  res.end(tweetJson);
+  var tweetstring = JSON.stringify(tweets);
+  var tweetsjson = JSON.parse(tweetstring)
+  for(var ind in tweetsjson.statuses) {
+    tweetsArray.push(tweetsjson.statuses[ind].text) ;
+  };
+  var tweetsRes = JSON.stringify(tweetsArray);
+  res.end(tweetsRes);
  });
 });
 
