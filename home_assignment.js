@@ -16,7 +16,7 @@ params = {
 var client = new Twitter(params);
 
 
-app.listen(8080);
+app.listen(3000);
 
 app.route('/tweets').get(function(req, res) {
   var q = url.parse(req.url, true).query;
