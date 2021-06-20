@@ -28,7 +28,6 @@ app.route('/tweets').get(function(req, res) {
   for(var ind in tweets.statuses) {
     tweetsArray.push(tweets.statuses[ind].text);
   };
-  var tweetsRes = JSON.stringify(tweetsArray);
   res.json(tweetsArray);
  });
 });
@@ -40,8 +39,6 @@ app.route('/health').get(function(req, res) {
   var usage_cpu;
   os_util.cpuUsage(function(v){
     usage_cpu = v;
-  
-  var healthJson = JSON.stringify({OSname: os.type(), platformVersion: os.release(), MemoryUsage: usage_mem.toString(), CPUUsage: usage_cpu.toString()});
   res.json({OSname: os.type(), platformVersion: os.release(), MemoryUsage: usage_mem.toString(), CPUUsage: usage_cpu.toString()});
   });
 });
