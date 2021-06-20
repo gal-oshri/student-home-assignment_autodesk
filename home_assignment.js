@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require("express");
 var app = express();
 var Twitter = require('twitter');
@@ -7,9 +8,9 @@ var os_util 	= require('os-utils');
 const { text } = require("express");
 
 params = {
-  consumer_key: 'NzC26USe8NEXCWYQ4XFhk7SK3',
-  consumer_secret: 'aR1igDjAugImaq3Ewh8zenAO5PijlFwCHU9JSbTNgZEOAtJ08D',
-  bearer_token: 'AAAAAAAAAAAAAAAAAAAAAGDoQgEAAAAAYbIVfjhfpjHz2uyCjWOmm%2BpiGcI%3DW5ZOgeLg8kpvYl1YaFDqSY3idlirn5MpmgGZY9jaHU6ab7tG8l'
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  bearer_token: process.env.BEARER_TOKEN
 };
 var client = new Twitter(params);
 
