@@ -5,7 +5,6 @@ var Twitter = require('twitter');
 var url = require('url');
 var os = require('os');
 var os_util 	= require('os-utils');
-const { text } = require("express");
 
 params = {
   consumer_key: process.env.CONSUMER_KEY,
@@ -13,7 +12,6 @@ params = {
   bearer_token: process.env.BEARER_TOKEN
 };
 var client = new Twitter(params);
-
 
 let port = process.env.PORT;
 if (port == null || port == "") {
