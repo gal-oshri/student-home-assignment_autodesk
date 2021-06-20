@@ -26,8 +26,8 @@ app.route('/tweets').get(function(req, res) {
   client.get('search/tweets', {q: q.query, result_type: 'recent', count: 10}, function(error, tweets, response) {
   var tweetstring = JSON.stringify(tweets);
   var tweetsjson = JSON.parse(tweetstring)
-  for(var ind in tweetsjson.statuses) {
-    tweetsArray.push(tweetsjson.statuses[ind].text) ;
+  for(var ind in tweets.statuses) {
+    tweetsArray.push(tweets.statuses[ind].text) ;
   };
   var tweetsRes = JSON.stringify(tweetsArray);
   res.end(tweetsRes);
